@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="dft, fft, fourier"/>
+	<meta name="author" content="Simone Cernuschi, cersimo97@gmail.com">
+	<title>DFT Epicycles</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<script type="text/javascript" src="lib/jquery-3.4.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+	<script type="text/javascript" src="lib/p5.js"></script>
+	<script type="text/javascript" src="lib/p5.dom.min.js"></script>
+	<script type="text/javascript" src="js/dft.js"></script>
+	<script type="text/javascript" src="js/myScript2Instance.js"></script>
+	<script type="text/javascript" src="js/docScripts.js"></script>
+</head>
+
+<body class="d-flex flex-column">
+	<div class="container">
+		<h1 class="mt-3">Edge Detector <span class="badge badge-info">beta</span></h1>
+		<p>Reconstruction of an uploaded image by the user, broken down into the two components <i>x</i> and
+			<i>y</i> by
+			<abbr title="Discrete Fourier Transform" class="initialism">DFT</abbr>. It is recommended to use vector
+			image type than raster one: the former result is clearly better.</p>
+		<div class="row">
+			<form id="myForm" class="custom-file">
+				<div class="row mx-3">
+					<div class="col col-sm-8">
+						<input type="file" id="file" name="file" class="custom-file-input" accept=".jpg, .jpeg, .png" required>
+						<label class="custom-file-label" for="customFile">Choose an image...</label>
+						<small class="form-text text-muted">
+							Only jpg and png files are accepted
+						</small>
+					</div>
+					<div class="col col-sm-4">
+						<button type="submit" id="btnUpload" class="btn btn-primary btn-block">
+							<span class="spinner-border spinner-border-sm d-none" role="status"
+								aria-hidden="true"></span>
+							Submit
+						</button>
+
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="row justify-content-center">
+			<div id="sketch-holder" class="my-5"></div>
+		</div>
+		<p id="controlsDescr" class="d-none"><em class="font-weight-bold"># of Epicycles</em> refers to the number of
+			circles (and consequently, the
+			number of frequency components)
+			displayed.<br><em class="font-weight-bold">Speed</em> refers to the speed taken to draw the path.</p>
+	</div>
+
+</body>
+
+<footer class="footer mt-auto py-1 bg-light text-center">
+	<div class="container">
+		<span class="text-muted">Simone Cernuschi - cersimo97@gmail.com<br><small>July 2019</small></span>
+	</div>
+</footer>
+
+</html>
